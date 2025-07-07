@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Port Services - Accueil | Solutions Logistiques Portuaires</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap');
+        
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: #f8fafc;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        
+        .hero-gradient {
+            background: linear-gradient(135deg, #1e3a8a 0%, #1e40af 100%);
+        }
+        
+        .wave-shape {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            overflow: hidden;
+            line-height: 0;
+        }
+        
+        .wave-shape svg {
+            position: relative;
+            display: block;
+            width: calc(267% + 1.3px);
+            height: 200px;
+        }
+        
+        .wave-shape .shape-fill {
+            fill: #f8fafc;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header/Navigation -->
+    <header class="bg-white shadow-sm">
+        <div class="container mx-auto px-6 py-4">
+            <div class="flex items-center justify-between">
+                <div class="text-2xl font-bold text-blue-900">NON PROJET OU ENTREPRISE</div>
+                <nav class="hidden md:flex space-x-8">
+                    <a href="#" class="text-blue-900 hover:text-blue-700 font-medium">Accueil</a>
+                    <a href="./services.html" class="text-blue-900 hover:text-blue-700 font-medium">Services</a>
+                    <a href="./form.html" class="text-blue-900 hover:text-blue-700 font-medium">Demande</a>
+                    <a href="#footer" class="text-blue-900 hover:text-blue-700 font-medium">Contact</a>
+                    <a href="./login.html" class="text-blue-900 hover:text-blue-700 font-medium">Admin</a>
+                </nav>
+                
+            </div>
+        </div>
+    </header>
+
+<!-- Hero Section avec Slideshow -->
+<section class="relative h-screen">
+  <div class="absolute inset-0">
+    <img src="./fond (1).jpg" class="w-full h-full object-cover absolute fade-image hidden" />
+    <img src="./fond (3).jpg" class="w-full h-full object-cover absolute fade-image" />
+    <img src="./fond (6).jpeg" class="w-full h-full object-cover absolute fade-image" />
+    <img src="./fond (9).jpeg" class="w-full h-full object-cover absolute fade-image" />
+    <img src="./fond (12).jpeg" class="w-full h-full object-cover absolute fade-image" />
+    <img src="./chiffres.jpg" class="w-full h-full object-cover absolute fade-image" />
+    <div class="absolute inset-0 bg-black bg-opacity-50"></div>
+  </div>
+
+  <div class="container mx-auto px-6 h-full flex items-center relative z-10">
+    <div class="max-w-3xl text-white">
+      <h1 class="text-4xl md:text-6xl font-bold mb-6">Optimisez vos opérations portuaires</h1>
+      <div class="flex space-x-4 mt-8">
+        <button class="bg-blue-600 text-white font-semibold py-3 px-8 rounded-full hover:bg-blue-700 transition duration-300">Découvrir</button>
+        <button class="border-2 border-white text-white font-semibold py-3 px-8 rounded-full hover:bg-white hover:text-blue-900 transition duration-300">Contact</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  const images = document.querySelectorAll('.fade-image');
+  let current = 0;
+
+  setInterval(() => {
+    images[current].classList.add('hidden');
+    current = (current + 1) % images.length;
+    images[current].classList.remove('hidden');
+  }, 3000);
+</script>
+
+    <!-- VALEUR  -->
+    <section class="py-16 bg-gray-50">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-blue-900 mb-4">Nos Valeurs</h2>
+                <p class="max-w-2xl mx-auto text-gray-600">Ce qui nous distingue dans le secteur portuaire</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-white p-8 rounded-lg shadow-md text-center">
+                    <div class="text-blue-900 text-4xl mb-4">🏭</div>
+                    <h3 class="text-xl font-bold mb-3">Expertise industrielle</h3>
+                    <p class="text-gray-600">25 ans d'expérience dans la gestion portuaire et logistique</p>
+                </div>
+                <div class="bg-white p-8 rounded-lg shadow-md text-center">
+                    <div class="text-blue-900 text-4xl mb-4">🚢</div>
+                    <h3 class="text-xl font-bold mb-3">Solutions sur mesure</h3>
+                    <p class="text-gray-600">Services adaptés à chaque client et chaque type de fret</p>
+                </div>
+                <div class="bg-white p-8 rounded-lg shadow-md text-center">
+                    <div class="text-blue-900 text-4xl mb-4">🔒</div>
+                    <h3 class="text-xl font-bold mb-3">Sécurité absolue</h3>
+                    <p class="text-gray-600">Normes de sécurité les plus strictes du secteur</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONFIANCE  -->
+    <section class="py-20 bg-gray-50">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-blue-900 mb-4">Ils nous font confiance</h2>
+                <p class="max-w-2xl mx-auto text-gray-600">Découvrez ce que nos clients disent de nos services.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-white p-8 rounded-xl shadow-md">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 rounded-full bg-blue-100 flex items-center justify-center text-blue-900 font-bold mr-4">AM</div>
+                        <div>
+                            <h4 class="font-bold">NON CLIENT </h4>
+                            <p class="text-sm text-gray-500">DOMAINE </p>
+                        </div>
+                    </div>
+                    <p class="text-gray-600">"Leur expertise en manutention de conteneurs a réduit nos temps d'escale de 30%. Un partenariat précieux."</p>
+                    <div class="flex mt-4">
+                        
+                    </div>
+                </div>
+                
+                <div class="bg-white p-8 rounded-xl shadow-md">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 rounded-full bg-blue-100 flex items-center justify-center text-blue-900 font-bold mr-4">SL</div>
+                        <div>
+                            <h4 class="font-bold">NON CLIENT </h4>
+                            <p class="text-sm text-gray-500">DOMAINE </p>
+                        </div>
+                    </div>
+                    <p class="text-gray-600">"Leur gestion des escales de croisière est impeccable. Nos passagers apprécient particulièrement l'accueil personnalisé."</p>
+                    <div class="flex mt-4">
+                        
+                    </div>
+                </div>
+                
+                <div class="bg-white p-8 rounded-xl shadow-md">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 rounded-full bg-blue-100 flex items-center justify-center text-blue-900 font-bold mr-4">PD</div>
+                        <div>
+                            <h4 class="font-bold">NON CLIENT </h4>
+                            <p class="text-sm text-gray-500">DOMAINE </p>
+                        </div>
+                    </div>
+                    <p class="text-gray-600">"Leur service de réparation navale est réactif et professionnel. Ils ont réduit nos temps d'immobilisation significativement."</p>
+                    <div class="flex mt-4">
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-16 bg-blue-900 text-white">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold mb-6">Prêt à optimiser vos opérations portuaires?</h2>
+            <p class="text-xl mb-8 max-w-2xl mx-auto">Contactez notre équipe d'experts pour une solution sur mesure adaptée à vos besoins spécifiques.</p>
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+                <button class="bg-white text-blue-900 font-semibold py-3 px-8 rounded-full hover:bg-gray-100 transition duration-300">
+                    Demander un devis
+                </button>
+                <button class="border-2 border-white text-white font-semibold py-3 px-8 rounded-full hover:bg-white hover:text-blue-900 transition duration-300">
+                    NUMÉRO 
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12" id="footer">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Port Services</h3>
+                    <p class="text-gray-400">Experts en solutions logistiques et portuaires depuis 2005. Innovation, fiabilité et excellence opérationnelle.</p>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4">Services</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#" class="hover:text-white">#########</a></li>
+                        <li><a href="#" class="hover:text-white">#########</a></li>
+                        <li><a href="#" class="hover:text-white">#########</a></li>
+                        <li><a href="#" class="hover:text-white">#########</a></li>
+                        <li><a href="#" class="hover:text-white">#########</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4">Contact</h4>
+                    <address class="text-gray-400 not-italic">
+                        <p class="mb-2">Zone Portuaire, Quai 12</p>
+                        <p class="mb-2">LIEU</p>
+                        <p class="mb-2">LIEN</p>
+                        <p>NUMERO</p>
+                    </address>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 mt-12 pt-8 text-center text-gray-400">
+                <p>© 2025 soutenance Licence . Tous droits réservés.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Simple animation 
+        document.addEventListener('DOMContentLoaded', function() {
+            const serviceCards = document.querySelectorAll('.service-card');
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = 1;
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, { threshold: 0.1 });
+            
+            serviceCards.forEach(card => {
+                card.style.opacity = 0;
+                card.style.transform = 'translateY(20px)';
+                card.style.transition = 'all 0.5s ease-out';
+                observer.observe(card);
+            });
+            
+            // config mobile 
+        });
+    </script>
+    <!-- Bouton Flottant -->
+<button id="backToTop" class="hidden fixed bottom-6 right-6 bg-blue-600 text-white p-4 rounded-full shadow-lg hover:bg-blue-700 transition duration-300">
+  <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mx-auto" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 15l7-7 7 7" />
+  </svg>
+</button>
+
+<script>
+  const backToTopBtn = document.getElementById('backToTop');
+
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 300) {
+      backToTopBtn.classList.remove('hidden');
+    } else {
+      backToTopBtn.classList.add('hidden');
+    }
+  });
+
+  backToTopBtn.addEventListener('click', () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+  });
+</script>
+
+
+</body>
+</html>

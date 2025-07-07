@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Formulaire Demande Navire</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <style>
+    body {
+      background-image: url('https://images.unsplash.com/photo-1528297506728-9533d2ac3fa4?ixlib=rb-4.0.3&auto=format&fit=crop&w=1950&q=80');
+      background-size: cover;
+      background-position: center;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: Arial, sans-serif;
+    }
+
+    .form-container, #successMessage {
+      backdrop-filter: blur(10px);
+      background-color: rgba(255, 255, 255, 0.85);
+      border-radius: 1rem;
+      padding: 2rem;
+      max-width: 600px;
+      width: 90%;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+      animation: fadeIn 1s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes popUp {
+      0% { transform: scale(0.8); opacity: 0; }
+      50% { transform: scale(1.05); opacity: 1; }
+      100% { transform: scale(1); }
+    }
+
+    #successMessage {
+      animation: popUp 0.8s ease-in-out;
+    }
+
+  </style>
+</head>
+<body>
+
+  <div class="form-container" id="formContainer">
+    <h2 class="text-3xl font-bold mb-4 text-center text-blue-800">Demande de Service Navire</h2>
+    <form id="navireForm" class="space-y-4">
+
+      <div>
+        <label class="block font-semibold">Nom du navire</label>
+        <input type="text" name="nom" required class="w-full p-2 border rounded">
+      </div>
+
+      <div>
+        <label class="block font-semibold">IMO du navire</label>
+        <input type="text" name="imo" required class="w-full p-2 border rounded">
+      </div>
+
+      <div>
+        <label class="block font-semibold">Arrivée du navire</label>
+        <input type="date" name="arrivee" required class="w-full p-2 border rounded">
+      </div>
+
+      <div>
+        <label class="block font-semibold">Départ du navire</label>
+        <input type="date" name="depart" required class="w-full p-2 border rounded">
+      </div>
+
+      <div>
+        <label class="block font-semibold">Nature de la demande</label>
+        <select name="nature" id="natureDemande" onchange="handleNatureChange()" required class="w-full p-2 border rounded">
+          <option value="">-- Choisissez --</option>
+          <option value="ordures">Enlèvement d'ordures</option>
+          <option value="lavage">Lavage de cale</option>
+          <option value="avitaillement">Avitaillement</option>
+          <option value="autres">Autres (précisez)</option>
+        </select>
+      </div>
+
+      <div id="avitaillementSection" style="display:none">
+        <label class="block font-semibold">Télécharger la liste pour avitaillement</label>
+        <input type="file" name="avitaillementFile" class="w-full p-2 border rounded">
+      </div>
+
+      <div id="autresSection" style="display:none">
+        <label class="block font-semibold">Précisez votre demande</label>
+        <textarea name="autresDetails" class="w-full p-2 border rounded"></textarea>
+      </div>
+
+      <button type="submit" class="w-full bg-blue-600 text-white py-2 rounded hover:bg-blue-700 transition-transform transform hover:scale-105">Envoyer</button>
+
+<button type="submit" class="w-full bg-blue-600 text-white py-2 rounded hover:bg-blue-700 transition-transform transform hover:scale-105"><a href="./index.html">Retour Acceuil</a></button>
+    </form>
+  </div>
+
+  <div id="successMessage" class="hidden text-center">
+    <h2 class="text-4xl font-extrabold text-green-700 mb-4 animate-bounce">✅ Merci !</h2>
+    <p class="mb-6 text-lg font-medium">Votre demande a été effectuée avec succès.</p>
+    <a href="index.html" class="inline-block bg-blue-600 text-white px-5 py-2 rounded hover:bg-blue-700 transform hover:scale-105 transition-transform">Retour à l'accueil</a>
+  </div>
+
+  <script>
+    function handleNatureChange() {
+      const nature = document.getElementById('natureDemande').value;
+      document.getElementById('avitaillementSection').style.display = nature === 'avitaillement' ? 'block' : 'none';
+      document.getElementById('autresSection').style.display = nature === 'autres' ? 'block' : 'none';
+    }
+
+    document.getElementById('navireForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      document.getElementById('formContainer').style.display = 'none';
+      document.getElementById('successMessage').classList.remove('hidden');
+    });
+  </script>
+
+</body>
+</html>
